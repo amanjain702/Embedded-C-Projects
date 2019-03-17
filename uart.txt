@@ -1,0 +1,15 @@
+#include<avr/io.h>
+#include<util/delay.h>
+#include<uart.h>
+void main()
+{
+unsigned char x;
+DDRB=0xff;
+uart_init();
+while(1)
+{
+x=uart_rec();
+PORTB=x;
+}
+}
+
